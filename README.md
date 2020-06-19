@@ -51,17 +51,20 @@ Assume bad crops ratio is less than 20%. We use some unsupervised learning algo 
 Code 3: Classifies crop and weed seedlings. (Seedlings have different ages; Use RGB differentiate)
 Check images of leaves for bite marks or signs of infection
 
-
-### Model Results
-
 ### Implementation
   - Raspberry Pi (Adafruit)
 ```sh
-$ pip install Adafruit
+$ pip3 install adafruit-io
 ```
 
+Or clone from this repo: https://github.com/adafruit/Adafruit_IO_Python
+
 Sample data:
+
+We use sample data and time series analysis idea used by a team. We find that integrating this idea with our ML camera vision approach will offer a heightened accuracy.
 https://github.com/chuachinhon/weather_singapore_cch
+
+### Model Explanation
 
 To achieve superior performance without compromising the resource efficiency, EfficientNets rely on AutoML and compound scaling. The AutoML Mobile framework has helped to develop a baseline network of mobile sizes, EfficientNet-B0, which is then enhanced by the compound scaling method to obtain EfficientNet-B1 to B7.
 
