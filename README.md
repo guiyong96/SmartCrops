@@ -57,12 +57,17 @@ Check images of leaves for bite marks or signs of infection
 ### Implementation
   - Raspberry Pi (Adafruit)
 ```sh
-$ cd dillinger
-$ npm install -d
-$ node app
+$ pip install Adafruit
 ```
 
-  - See HTML in the right
+Sample data:
+https://github.com/chuachinhon/weather_singapore_cch
+
+To achieve superior performance without compromising the resource efficiency, EfficientNets rely on AutoML and compound scaling. The AutoML Mobile framework has helped to develop a baseline network of mobile sizes, EfficientNet-B0, which is then enhanced by the compound scaling method to obtain EfficientNet-B1 to B7.
+
+With an order of magnitude better efficiency, EfficientNets achieves state-of-the-art precision on ImageNet: 
+
+On ImageNet, with 66M parameters and 37B FLOPS, EfficientNet-B7 achieves the state-of-the-art 84.4 percent top-1/97.1 percent top-5 accuracy in a high precision system. At the same time the model on CPU inference is 8.4x smaller and 6.1x faster than the previous leader, Gpipe.
 
 ### Features
   - Temperature

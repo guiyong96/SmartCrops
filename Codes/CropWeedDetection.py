@@ -26,13 +26,13 @@ warnings.filterwarnings("ignore")
 
 # Sorting training data
 train_direc = 'C://Users//leegu//OneDrive//Desktop//91319_211650_bundle_archive'
-train = os.listdir(direc)
+train = os.listdir(train_direc)
 
 records = []
-for category in train_list:
+for category in train:
     if "nonsegmented" not in category:
         # append data
-        img_list = os.listdir(direc + "//" + category)
+        img_list = os.listdir(train_direc + "//" + category)
         for img in img_list:
             records.append((img,category))
         
@@ -73,24 +73,16 @@ i_height, i_width = min(dim_image), min(dim_image)
 
 X = []
 count = 0
-bad_images = []
-for i in (train_dir + "//" + df_train['category'] + '/' + df_train['image']):
-    img = Image.open(i)
-    img.load()
-    img = np.asarray(img, dtype='float32')
-    img = img/255
-    data = transform.resize(img,(49,49))
-    if data.size != 7203:
-        bad_images.append(count)
-    count += 1
 
-df_train = df_train.drop(df_train.index[bad_images])
-for i in (train_dir + df_train['category'] + '/' + df_train['image']):
+# Remove images with incorrect dimensions
+for i in (train_dir + "//" + df_train['category'] + '//' + df_train['image']):
     img = Image.open(i)
     img.load()
     img = np.asarray(img, dtype='float32')
     img = img/255
     data = transform.resize(img,(49,49))
+    count += 1
+	df_train = df_train.drop(df_train.index[count])
     X.append(data)
 
 X = np.array(X)
